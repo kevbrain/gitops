@@ -35,7 +35,7 @@ spec:
     kind: SealedSecret
   project: default
   source:
-    path: config\argocd
+    path: config/argocd
     repoURL: https://github.com/kevbrain/gitops.git
   syncPolicy:
     automated:

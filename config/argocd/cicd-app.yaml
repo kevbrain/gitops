@@ -35,7 +35,7 @@ spec:
     kind: SealedSecret
   project: default
   source:
-    path: config\dev-cicd\overlays
+    path: config/dev-cicd/overlays
     repoURL: https://github.com/kevbrain/gitops.git
   syncPolicy:
     automated:
