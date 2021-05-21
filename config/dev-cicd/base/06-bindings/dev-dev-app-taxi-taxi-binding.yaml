@@ -1,0 +1,13 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerBinding
+metadata:
+  creationTimestamp: null
+  name: dev-dev-app-taxi-taxi-binding
+  namespace: dev-cicd
+spec:
+  params:
+  - name: imageRepo
+    value: <registry>/<username>/<image name>
+  - name: tlsVerify
+    value: "true"
+status: {}

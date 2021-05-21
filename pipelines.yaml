@@ -1,0 +1,29 @@
+config:
+  argocd:
+    namespace: openshift-gitops
+  pipelines:
+    name: dev-cicd
+environments:
+- apps:
+  - name: app-taxi
+    services:
+    - name: taxi
+      pipelines:
+        integration:
+          bindings:
+          - dev-dev-app-taxi-taxi-binding
+          - github-push-binding
+      source_url: https://github.com/kevbrain/taxi.git
+      webhook:
+        secret:
+          name: webhook-secret-dev-dev-taxi
+          namespace: dev-cicd
+  name: dev-dev
+  pipelines:
+    integration:
+      bindings:
+      - github-push-binding
+      template: app-ci-template
+- name: dev-stage
+gitops_url: https://github.com/kevbrain/gitops.git
+version: 1
